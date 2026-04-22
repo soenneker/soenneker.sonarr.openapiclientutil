@@ -1,20 +1,19 @@
 using Soenneker.Sonarr.OpenApiClientUtil.Abstract;
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Sonarr.OpenApiClientUtil.Tests;
 
-[Collection("Collection")]
-public sealed class SonarrOpenApiClientUtilTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public sealed class SonarrOpenApiClientUtilTests : HostedUnitTest
 {
     private readonly ISonarrOpenApiClientUtil _openapiclientutil;
 
-    public SonarrOpenApiClientUtilTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public SonarrOpenApiClientUtilTests(Host host) : base(host)
     {
         _openapiclientutil = Resolve<ISonarrOpenApiClientUtil>(true);
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
