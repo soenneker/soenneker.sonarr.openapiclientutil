@@ -6,12 +6,12 @@ using Soenneker.Sonarr.OpenApiClientUtil.Abstract;
 namespace Soenneker.Sonarr.OpenApiClientUtil.Registrars;
 
 /// <summary>
-/// Registers the OpenAPI client utility for dependency injection.
+/// Registers the lazily initialized Sonarr API client.
 /// </summary>
 public static class SonarrOpenApiClientUtilRegistrar
 {
     /// <summary>
-    /// Adds <see cref="SonarrOpenApiClientUtil"/> as a singleton service. <para/>
+    /// Adds the Sonarr API client utility as a singleton service. <para/>
     /// </summary>
     public static IServiceCollection AddSonarrOpenApiClientUtilAsSingleton(this IServiceCollection services)
     {
@@ -22,7 +22,7 @@ public static class SonarrOpenApiClientUtilRegistrar
     }
 
     /// <summary>
-    /// Adds <see cref="SonarrOpenApiClientUtil"/> as a scoped service. <para/>
+    /// Adds the Sonarr API client utility as a scoped service backed by the singleton HTTP client provider. <para/>
     /// </summary>
     public static IServiceCollection AddSonarrOpenApiClientUtilAsScoped(this IServiceCollection services)
     {
