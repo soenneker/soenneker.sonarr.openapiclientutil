@@ -12,6 +12,7 @@ using Soenneker.Utils.AsyncSingleton;
 
 namespace Soenneker.Sonarr.OpenApiClientUtil;
 
+/// <inheritdoc cref="ISonarrOpenApiClientUtil" />
 public sealed class SonarrOpenApiClientUtil : ISonarrOpenApiClientUtil
 {
     private readonly AsyncSingleton<SonarrOpenApiClient> _client;
