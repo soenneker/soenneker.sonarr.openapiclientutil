@@ -45,6 +45,6 @@
 
     <ItemGroup>
         <PackageReference Include="Soenneker.Sonarr.HttpClients" Version="11.0.170" />
-        <PackageReference Include="Soenneker.Sonarr.OpenApiClient" Version="11.0.66" />
+        <PackageReference Include="Soenneker.Sonarr.OpenApiClient" Version="11.0.68" />
     </ItemGroup>
 </Project>
